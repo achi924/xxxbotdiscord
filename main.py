@@ -6,6 +6,8 @@ import time
 from discord.ext import commands
 from discord import app_commands, ui
 import os
+from dotenv import load_dotenv
+load_dotenv()
 from server import server_on
 
 intents = discord.Intents.default()
