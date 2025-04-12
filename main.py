@@ -100,6 +100,12 @@ async def on_ready():
     await bot.tree.sync()
     print(f"✅ Bot is online as {bot.user}")
     await bot.change_presence(activity=discord.Streaming(name='ระบบเช็กชื่อ Roblox', url='https://www.twitch.tv/kerlf'))
+        try:
+        with open('image.gif', 'rb') as avatar:
+            await client.user.edit(avatar=avatar.read())
+        print('Animated avatar uploaded successfully!')
+    except Exception as e:
+        print("Failed to upload animated avatar:", e)
 
 server_on()  # เรียกใช้ฟังก์ชัน server_on เพื่อเริ่มเซิร์ฟเวอร์ Flask
 
